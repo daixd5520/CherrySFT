@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=9 llamafactory-cli train /home/dxd/SFT/LLaMA-Factory/examples/train_lora/Wizard/llama2_7b_lora_sft_Wizard_remove16k.yaml

@@ -1,0 +1,75 @@
+pad token: </s>
+
+
+[INFO|configuration_utils.py:670] 2024-10-10 20:43:27,121 >> loading configuration file /home/dxd/SFT/models/Llama-2-7b-hf/config.json
+[INFO|configuration_utils.py:739] 2024-10-10 20:43:27,122 >> Model config LlamaConfig {
+  "_name_or_path": "/home/dxd/SFT/models/Llama-2-7b-hf",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 4096,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.45.0",
+  "use_cache": true,
+  "vocab_size": 32000
+}
+
+[INFO|modeling_utils.py:3723] 2024-10-10 20:43:27,426 >> loading weights file /home/dxd/SFT/models/Llama-2-7b-hf/model.safetensors.index.json
+[INFO|modeling_utils.py:1622] 2024-10-10 20:43:27,447 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:1099] 2024-10-10 20:43:27,449 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+
+
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████| 2/2 [02:03<00:00, 61.94s/it]
+[INFO|modeling_utils.py:4568] 2024-10-10 20:45:31,425 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:4576] 2024-10-10 20:45:31,425 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /home/dxd/SFT/models/Llama-2-7b-hf.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:1052] 2024-10-10 20:45:31,435 >> loading configuration file /home/dxd/SFT/models/Llama-2-7b-hf/generation_config.json
+[INFO|configuration_utils.py:1099] 2024-10-10 20:45:31,436 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "do_sample": true,
+  "eos_token_id": 2,
+  "max_length": 4096,
+  "pad_token_id": 0,
+  "temperature": 0.6,
+  "top_p": 0.9
+}
+
+10/10/2024 20:45:31 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+10/10/2024 20:45:31 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+10/10/2024 20:45:31 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+10/10/2024 20:45:31 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+10/10/2024 20:45:31 - INFO - llamafactory.model.model_utils.misc - Found linear modules: down_proj,o_proj,gate_proj,up_proj,v_proj,k_proj,q_proj
+10/10/2024 20:45:34 - INFO - llamafactory.model.loader - trainable params: 19,988,480 || all params: 6,758,404,096 || trainable%: 0.2958
+[INFO|trainer.py:667] 2024-10-10 20:45:34,115 >> Using auto half precision backend
+[INFO|trainer.py:2243] 2024-10-10 20:45:34,949 >> ***** Running training *****
+[INFO|trainer.py:2244] 2024-10-10 20:45:34,949 >>   Num examples = 900
+[INFO|trainer.py:2245] 2024-10-10 20:45:34,949 >>   Num Epochs = 3
+[INFO|trainer.py:2246] 2024-10-10 20:45:34,949 >>   Instantaneous batch size per device = 4
+[INFO|trainer.py:2249] 2024-10-10 20:45:34,949 >>   Total train batch size (w. parallel, distributed & accumulation) = 32
+[INFO|trainer.py:2250] 2024-10-10 20:45:34,949 >>   Gradient Accumulation steps = 8
+[INFO|trainer.py:2251] 2024-10-10 20:45:34,949 >>   Total optimization steps = 84
+[INFO|trainer.py:2252] 2024-10-10 20:45:34,954 >>   Number of trainable parameters = 19,988,480
